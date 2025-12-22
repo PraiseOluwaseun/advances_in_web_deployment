@@ -1,0 +1,348 @@
+/* --- 1. Variables & Theme --- */
+:root {
+  --gold: #D4AF37;
+  --gold-dark: #B49020;
+  --black-bg: #050505;
+  --black-card: #0a0a0a;
+  --white: #ffffff;
+  --gray: #a3a3a3;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* --- 2. Global Resets --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-bg);
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* --- New Image Styles --- */
+
+/* 1. Top Right Corner Image */
+.top-corner-img {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 100;
+}
+
+.top-corner-img img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.top-corner-img img:hover {
+  transform: scale(1.1);
+}
+
+/* 2. Hero Center Image */
+.hero-avatar-container {
+  margin: 1.5rem 0; /* Spacing between name and role */
+}
+
+.hero-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gold);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- 3. Typography --- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background-color: var(--gold);
+  margin: 0 auto 1.5rem auto;
+}
+
+/* --- 4. Layout Helpers --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 5rem 0;
+}
+
+/* --- 5. Hero Section --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at center, #1a1a1a 0%, var(--black-bg) 70%);
+}
+
+.hero-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-role {
+  font-size: 1.5rem;
+  color: var(--gray);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-primary {
+  background-color: var(--gold);
+  color: var(--black-bg);
+  border: 2px solid var(--gold);
+}
+
+.btn-primary:hover {
+  background-color: var(--white);
+  border-color: var(--white);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.btn-outline:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+/* --- 6. About Section --- */
+.about-card {
+  background-color: var(--black-card);
+  padding: 2.5rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* --- 7. Experience & Education --- */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .timeline-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid #333;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  background-color: var(--gold);
+  border-radius: 50%;
+}
+
+.timeline-role {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.timeline-meta {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-desc {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* --- 8. Skills Grid --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: var(--black-card);
+  border: 1px solid #333;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: border-color 0.3s;
+}
+
+.skill-card:hover {
+  border-color: var(--gold);
+}
+
+.skill-icon {
+  color: var(--gold);
+}
+
+/* --- 9. Projects Grid --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.project-card {
+  background-color: var(--black-card);
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.project-link {
+  color: var(--gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 1.5rem;
+}
+
+/* --- 10. Footer --- */
+.footer {
+  background-color: var(--black-card);
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #222;
+  color: var(--gray);
+}
