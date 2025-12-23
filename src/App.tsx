@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 
-import profilePic from './assets/profilePic.jpg'; 
+import profilePic from './assets/profile.jpg'; 
 
 
 const portfolioData = {
