@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './App.css';
 import { motion } from 'framer-motion';
 import { 
@@ -17,7 +17,7 @@ import {
 
 import profilePic from './assets/profilePic.jpg'; 
 
-// --- Data extracted from your CV ---
+
 const portfolioData = {
   personal: {
     name: "Praise Oluwatishe Oluwaseun",
